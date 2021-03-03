@@ -7,21 +7,17 @@ from bokeh.models.widgets import Select, DateRangeSlider
 from bokeh.layouts import row
 from datetime import datetime
 
-
 def plot(df, feauture):
-
     def create_plot(source,country, feauture):
         hover = HoverTool(tooltips=[("Date", "@date{%F}"), (feauture, str('@'+feauture))],
                       formatters = {'@date':'datetime'})
-
         p = figure(plot_width=900, plot_height=500,x_axis_type="datetime",
                    title="Total Covid-19 {} in {} by date".format(feauture, country),
                     toolbar_location='above')
-
         p.line(x='date', y=feauture, line_width=1, source=source,
                line_color="black")
-        p.vbar(x='date', top = feauture, line_width = 1, source = source, fill_color = 'orange', hover_fill_color = 'grey',
-               hover_fill_alpha = 1)
+        p.vbar(x='date', top=feauture, line_width=1, source=source, fill_color='orange', hover_fill_color='grey',
+               hover_fill_alpha=1)
 
         p.add_tools(hover)
         p.xaxis.axis_label = 'Date'
@@ -31,7 +27,6 @@ def plot(df, feauture):
         p.background_fill_color = "beige"
 
         return p
-
 
     def update(attr, old, new):
         country = country_select.value
@@ -55,7 +50,6 @@ def plot(df, feauture):
     date_select = DateRangeSlider(title = 'Date Range', start = min(df['date']), end = max(df['date']),
                               value = (min(df['date']), max(df['date'])), step = 15)
     date_select.on_change('value', update)
-
 
     initial_country = country_select.value
     source = ColumnDataSource(df[df['location'] == initial_country])
