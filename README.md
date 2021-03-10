@@ -26,6 +26,7 @@ Bokeh_app
 |
 └── main.py
 ```
-Start bokeh server
-open up a command line interface (I prefer Git Bash but any one will work), change to the directory containing bokeh_app and run bokeh serve --show bokeh_app
-the application will automatically open in our browser at the address http://localhost:5006/bokeh_app. We can then access the application and explore our dashboard!
+<h2>Start bokeh server</h2>
+open up a command line interface (I prefer Git Bash but any one will work), change to the directory containing bokeh_app and run:  
+`bokeh serve --show Bokeh_app` <br/>
+the application will automatically open in our browser at the address `http://localhost:5006/bokeh_app`. We can then access the application and explore our dashboard!
