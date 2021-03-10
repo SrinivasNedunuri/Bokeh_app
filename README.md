@@ -1,4 +1,5 @@
 # Interactive visualization dashboard of covid-19 data using bokeh
+![](app.gif)
 
 <h2>Data</h2> 
 Complete COVID-19 dataset is a collection of the COVID-19 data maintained by Our World in Data. It is updated daily and includes data on confirmed cases, deaths, and testing. Data can be found [here](https://ourworldindata.org/coronavirus-source-data)
